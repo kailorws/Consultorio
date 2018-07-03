@@ -41,24 +41,21 @@
 					<div class="item  active">
 						<asp:Image ImageUrl="~/Resources/Imagenes/background.jpg" runat="server" class="img-responsive" alt="" Width="100%" Height="100%" /> <!-- style="width:822px;height:322px;" --> <!-- YA ME QUEDO CLARO POR QUE TODAS LAS IMAGENES MISMO TAMAÑO -->
 						<div class="carousel-caption">
-							<!-- <h3>Este es nuestro Slide #1</h3>
-							<p>Lorem ipsum dolor sit amet.</p> -->
+							<!-- <h3>Este es nuestro Slide #1</h3> -->
 						</div>
 					</div>
 					<!-- #2 -->
 					<div class="item ">
 						<asp:Image ImageUrl="~/Resources/Imagenes/background3.jpg" runat="server" class="img-responsive" alt="" Width="100%" Height="100%" />
 						<div class="carousel-caption">
-							<!-- <h3>Este es nuestro Slide #2</h3>
-							<p>Lorem ipsum dolor sit amet.</p> -->
+							<!-- <h3>Este es nuestro Slide #2</h3> -->
 						</div>
 					</div>
 					<!-- #3 -->
 					<div class="item">
 						<asp:Image ImageUrl="~/Resources/Imagenes/background2.jpg" runat="server" class="img-responsive" alt="" Width="100%" Height="100%" />
 						<div class="carousel-caption">
-			   				<!-- <h3>Este es nuestro Slide #3</h3>
-							<p>Lorem ipsum dolor sit amet.</p> -->
+			   				<!-- <h3>Este es nuestro Slide #3</h3> -->
 						</div>
 					</div>
 				</div>
@@ -85,7 +82,7 @@
 
                     </div>
                 </div>
-            </div>
+            
             <div style="height: 100%; width: 20vw; margin-left: 80vw; background-color: #7dcf7d" runat="server"></div>
         </section>
     </form>
