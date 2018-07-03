@@ -155,6 +155,11 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Resources\Imagenes\background.jpg" />
+    <Content Include="Resources\Imagenes\background2.jpg" />
+    <Content Include="Resources\Imagenes\background3.jpg" />
+    <Content Include="Resources\Imagenes\icono.png" />
+    <Content Include="Resources\Imagenes\Panel copy.png" />
     <Content Include="Resources\Imagenes\Panel.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
