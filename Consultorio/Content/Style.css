@@ -1,0 +1,341 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Leckerli One','Algerian';
+}
+
+.cover{
+    background-color:#ffffff;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#Img1{
+ height:100%;
+ width:100%;
+}
+#Image1{
+    width:24vw;
+    height:60vh;
+    margin-left:38vw;
+}
+.elements{
+    position:absolute;
+    top:0;bottom:0;right:0;left:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.intro{
+    width:50vw;
+    height:70vh;
+    margin-left:5vw;
+    box-shadow:black 0px 40px 60px;
+}
+
+.intro2 {
+    width: 24vw;
+    height: 60vh;
+    margin-left: 10vw;
+    box-shadow: black 0px 40px 60px;
+    text-align:center;
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+    position:fixed;
+    padding-left:1vw;
+    
+    
+}
+#icono{
+    width:5vw;
+    height:7vh;
+    vertical-align:top;
+}
+#lbIngresar{
+    display:block;
+    padding-top:7vh;
+    font-size:3vw;
+    font-size:5vh;
+    font-family:'Leckerli One','Algerian';
+    text-shadow:black 0px 20px 20px;
+}
+#lbTitulo {
+    font-size: 3vw;
+    font-size: 5vh;
+}
+#lbMensajeError {
+    font-size: 1.9vw;
+    font-size: 1.9vh;
+    color: cornsilk;
+}
+.txt1{
+    
+    margin-top:4vh;
+
+}
+.txt2{
+    margin-top:7.4vh;
+
+}
+
+    .txt1[placeholder], .txt2[placeholder] {
+        font-family: 'Leckerli One','Algerian';
+        font-size: 2vw;
+        padding-left: 6vw;
+    }
+.txtstyle{
+    width:20vw;
+    height:6vh;
+    border:0;
+    border-radius:4%;
+    background-color:rgba(252,251,251,0.80);
+    box-shadow:black 0px 30px 50px;
+}
+.btnstyle {
+    margin-top: 7vh;
+    width: 17vw;
+    height: 7vh;
+    font-family: 'Leckerli One','Algerian';
+    font-size: 2vw;
+    border: 0px;
+    color: black;
+    text-shadow: black 0px 10px 10px;
+    background-color: rgba(255,255,255,0.57);
+}
+.btnstyle:hover{
+    background-color:transparent;
+    box-shadow:black 0px 90px 80px;
+}
+
+/* CSS DEL MENU */
+
+body, html {
+    height: 100%;
+}
+
+nav.sidebar, .main {
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+.main {
+    padding: 10px 10px 0 10px;
+}
+
+@media (min-width: 765px) {
+
+    .main {
+        position: absolute;
+        width: calc(100% - 40px);
+        margin-left: 40px;
+        float: right;
+    }
+
+    nav.sidebar:hover + .main {
+        margin-left: 200px;
+    }
+
+    nav.sidebar.navbar.sidebar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        margin-left: 0px;
+    }
+
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    nav.sidebar a {
+        padding-right: 13px;
+    }
+
+    nav.sidebar .navbar-nav > li:first-child {
+        border-top: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav > li {
+        border-bottom: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+        padding: 0 0px 0 0px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+
+    nav.sidebar {
+        width: 200px;
+        height: 100%;
+        margin-left: -160px;
+        float: left;
+        margin-bottom: 0px;
+    }
+
+        nav.sidebar li {
+            width: 100%;
+        }
+
+        nav.sidebar:hover {
+            margin-left: 0px;
+        }
+
+    .forAnimate {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 1330px) {
+
+    .main {
+        width: calc(100% - 200px);
+        margin-left: 200px;
+    }
+
+    nav.sidebar {
+        margin-left: 0px;
+        float: left;
+    }
+
+        nav.sidebar .forAnimate {
+            opacity: 1;
+        }
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #CCC;
+    background-color: transparent;
+   
+}
+
+nav:hover .forAnimate {
+    opacity: 1;
+}
+
+section {
+    padding-left: 15px;
+}
+
+/* CSS DEL CALENDARIO*/
+
+.calendar-day {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    height: 80px;
+}
+
+.calendar-table {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.selected {
+    background-color: #eee;
+}
+
+.outside .date {
+    color: #ccc;
+}
+
+.timetitle {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.event {
+    border-top: 1px solid #b2dba1;
+    border-bottom: 1px solid #b2dba1;
+    background-image: linear-gradient(to bottom, #dff0d8 0px, #c8e5bc 100%);
+    background-repeat: repeat-x;
+    color: #3c763d;
+    border-width: 1px;
+    font-size: .75em;
+    padding: 0 .75em;
+    line-height: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1px;
+}
+
+    .event.begin {
+        border-left: 1px solid #b2dba1;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .event.end {
+        border-right: 1px solid #b2dba1;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+    .event.all-day {
+        border-top: 1px solid #9acfea;
+        border-bottom: 1px solid #9acfea;
+        background-image: linear-gradient(to bottom, #d9edf7 0px, #b9def0 100%);
+        background-repeat: repeat-x;
+        color: #31708f;
+        border-width: 1px;
+    }
+
+        .event.all-day.begin {
+            border-left: 1px solid #9acfea;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .event.all-day.end {
+            border-right: 1px solid #9acfea;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+    .event.clear {
+        background: none;
+        border: 1px solid transparent;
+    }
+
+.table-tight > thead > tr > th,
+.table-tight > tbody > tr > th,
+.table-tight > tfoot > tr > th,
+.table-tight > thead > tr > td,
+.table-tight > tbody > tr > td,
+.table-tight > tfoot > tr > td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.table-tight-vert > thead > tr > th,
+.table-tight-vert > tbody > tr > th,
+.table-tight-vert > tfoot > tr > th,
+.table-tight-vert > thead > tr > td,
+.table-tight-vert > tbody > tr > td,
+.table-tight-vert > tfoot > tr > td {
+    padding-top: 0;
+    padding-bottom: 0;
+}
