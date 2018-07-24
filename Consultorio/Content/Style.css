@@ -46,6 +46,16 @@
     box-shadow: black 0px 40px 60px;
     text-align:center;
 }
+.box-center {
+    width: 24vw;
+    height: 60vh;
+    margin-left: 32vw;
+    margin-top: 10vh;
+    box-shadow: black 0px 40px 60px;
+    text-align: center;
+    padding-left: 1vw;
+    padding-top:2vh;
+}
 
 header {
     width: 100vw;

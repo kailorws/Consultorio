@@ -154,6 +154,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="InsertarMedicamento.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Resources\Imagenes\background.jpg" />
@@ -201,6 +202,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarMedicamento.aspx.cs">
+      <DependentUpon>InsertarMedicamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertarMedicamento.aspx.designer.cs">
+      <DependentUpon>InsertarMedicamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
