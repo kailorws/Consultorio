@@ -254,9 +254,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\Consultorio.DAL.csproj">
-      <Project>{cf9b11c7-e216-4e9a-9e2e-6e7412956a3f}</Project>
-      <Name>Consultorio.DAL</Name>
+    <ProjectReference Include="..\Consultorio.BLL\Consultorio.BLL.csproj">
+      <Project>{929aa4e5-281f-4c96-a777-eb72e9de81b5}</Project>
+      <Name>Consultorio.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DATA\Consultorio.DATA.csproj">
       <Project>{d561399a-8be0-4c8b-9b87-5ccdcc1449b9}</Project>

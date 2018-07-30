@@ -7,8 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using DATA;
-using DAL.Interfaces;
-using DAL.Metodos;
+using Consultorio.BLL.Interfaces;
+using Consultorio.BLL.Metodos;
+
 namespace Consultorio
 {
     public partial class Login : System.Web.UI.Page
@@ -28,9 +29,10 @@ namespace Consultorio
         {
             try
             {
-                int idUsuario = Convert.ToInt32(txtUsuario.Text);
-                var usuario = user.BuscarUsuario(idUsuario);
-                if(usuario.Id == Convert.ToInt32(txtUsuario.Text) && usuario.Contraseña == txtContrasena.Text)
+                string correo = txtUsuario.Text;
+                string contraseña = txtContrasena.Text;
+                var usuario = user.BuscarUsuarioCorreo(correo);
+                if(usuario.Correo == correo && usuario.Contraseña == contraseña)
                 {
                     Response.Redirect("Principal.aspx");
                 }
