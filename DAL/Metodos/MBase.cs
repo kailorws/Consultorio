@@ -16,8 +16,7 @@ namespace DAL.Metodos
         public MBase()
         {
             _conexion = new OrmLiteConnectionFactory(BD.Default.conexion,
-                SqlServerDialect.Provider);
-            _db = _conexion.Open();
+                SqlServerDialect.Provider);           
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Consultorio
             {
                 int idUsuario = Convert.ToInt32(txtUsuario.Text);
                 var usuario = user.BuscarUsuario(idUsuario);
-                if(usuario.Id == Convert.ToInt32(txtUsuario.Text) && usuario.Contraseña == txtContrasena.Text)
+                if(usuario.IdUsuario == Convert.ToInt32(txtUsuario.Text) && usuario.Contraseña == txtContrasena.Text)
                 {
                     Response.Redirect("Principal.aspx");
                 }

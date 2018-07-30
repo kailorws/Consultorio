@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DATA
 {
-    public class Datos_Medicos
+    public class DatosMedicos
     {
         public int Id_DM { get; set; }
 
