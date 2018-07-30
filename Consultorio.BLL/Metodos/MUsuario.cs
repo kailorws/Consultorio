@@ -20,6 +20,21 @@ namespace Consultorio.BLL.Metodos
             return mUsuario.BuscarUsuario(Id);
         }
 
+        public Usuario BuscarUsuarioCorreo(string correo)
+        {
+            List<Usuario> listaFiltrada = new List<Usuario>();
+            Usuario encontrado = null;
+            foreach (Usuario usuario in mUsuario.ListarUsuarios())
+            {
+                if (usuario.Correo == correo)
+                {
+                    encontrado = usuario;
+                }
+            }
+
+            return encontrado;
+        }
+
         public void EliminarUsuario(int Id)
         {
             mUsuario.EliminarUsuario(Id);

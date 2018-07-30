@@ -19,5 +19,7 @@ namespace Consultorio.BLL.Interfaces
 
         void EliminarUsuario(int Id);
 
+        Usuario BuscarUsuarioCorreo(string correo);
+
     }
 }
