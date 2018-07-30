@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{929AA4E5-281F-4C96-A777-EB72E9DE81B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Consultorio.BLL</RootNamespace>
+    <AssemblyName>Consultorio.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ICita.cs" />
+    <Compile Include="Interfaces\IDatosMedicos.cs" />
+    <Compile Include="Interfaces\IDireccion.cs" />
+    <Compile Include="Interfaces\IHorario.cs" />
+    <Compile Include="Interfaces\IMedicamento.cs" />
+    <Compile Include="Interfaces\IPaciente.cs" />
+    <Compile Include="Interfaces\IReceta.cs" />
+    <Compile Include="Interfaces\IRecetaMedica.cs" />
+    <Compile Include="Interfaces\IRol.cs" />
+    <Compile Include="Interfaces\IUsuario.cs" />
+    <Compile Include="Metodos\MDatosMedicos.cs" />
+    <Compile Include="Metodos\MDireccion.cs" />
+    <Compile Include="Metodos\MHorario.cs" />
+    <Compile Include="Metodos\MMedicamento.cs" />
+    <Compile Include="Metodos\MPaciente.cs" />
+    <Compile Include="Metodos\MBase.cs" />
+    <Compile Include="Metodos\MCita.cs" />
+    <Compile Include="Metodos\MReceta.cs" />
+    <Compile Include="Metodos\MRecetaMedica.cs" />
+    <Compile Include="Metodos\MRol.cs" />
+    <Compile Include="Metodos\MUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\Consultorio.DAL.csproj">
+      <Project>{cf9b11c7-e216-4e9a-9e2e-6e7412956a3f}</Project>
+      <Name>Consultorio.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DATA\Consultorio.DATA.csproj">
+      <Project>{d561399a-8be0-4c8b-9b87-5ccdcc1449b9}</Project>
+      <Name>Consultorio.DATA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
