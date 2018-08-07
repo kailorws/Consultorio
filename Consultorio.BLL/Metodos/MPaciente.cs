@@ -10,9 +10,20 @@ namespace Consultorio.BLL.Metodos
 {
     public class MPaciente : MBase, IPaciente
     {
-        public void ActualizarPaciente(Paciente paciente)
+
+        public void ActualizarPaciente(Paciente paciente, Datos_Medicos datosMedicos, Direccion datosContacto)
         {
-            mPaciente.ActualizarPaciente(paciente);
+            mPaciente.ActualizarPaciente(paciente, datosMedicos, datosContacto);
+        }
+
+        public Direccion buscarContactoPaciente(int cedulaPaciente)
+        {
+            return mPaciente.buscarContactoPaciente(cedulaPaciente);
+                    }
+
+        public Datos_Medicos buscarDatosMedicosPaciente(int cedulaPaciente)
+        {
+            return mPaciente.buscarDatosMedicosPaciente(cedulaPaciente);
         }
 
         public Paciente BuscarPaciente(int id)
@@ -25,9 +36,9 @@ namespace Consultorio.BLL.Metodos
             mPaciente.EliminarPaciente(id);
         }
 
-        public void InsertarPaciente(Paciente paciente)
+        public void InsertarPaciente(Paciente paciente, Datos_Medicos datosMedicos, Direccion datosContacto)
         {
-            mPaciente.InsertarPaciente(paciente);
+            mPaciente.InsertarPaciente(paciente, datosMedicos, datosContacto);
         }
 
         public List<Paciente> ListarPacientes()

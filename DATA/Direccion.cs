@@ -8,7 +8,7 @@ namespace DATA
 {
     public class Direccion
     {
-        public int IdDireccion { get; set; }
+        
 
         public string Ciudad { get; set; }
 
@@ -20,8 +20,7 @@ namespace DATA
 
         public string Correo { get; set; }
 
-        public int Cedula { get; set; }
+        public int? Cedula { get; set; }
 
     }
-
 }
