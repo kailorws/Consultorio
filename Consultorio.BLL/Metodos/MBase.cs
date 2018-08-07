@@ -9,9 +9,7 @@ namespace Consultorio.BLL.Metodos
     public class MBase
     {
         public DAL.Interfaces.ICita mCita;
-        public DAL.Interfaces.IDatosMedicos mDatosMedicos;
-        public DAL.Interfaces.IDireccion mDireccion;
-        public DAL.Interfaces.IHorario mHorario;
+                public DAL.Interfaces.IHorario mHorario;
         public DAL.Interfaces.IMedicamento mMedicamento;
         public DAL.Interfaces.IPaciente mPaciente;
         public DAL.Interfaces.IReceta mReceta;
@@ -23,9 +21,7 @@ namespace Consultorio.BLL.Metodos
         {
 
             mCita = new DAL.Metodos.MCita();
-            mDatosMedicos = new DAL.Metodos.MDatosMedicos();
-            mDireccion = new DAL.Metodos.MDireccion();
-            mHorario = new DAL.Metodos.MHorario();
+                        mHorario = new DAL.Metodos.MHorario();
             mMedicamento = new DAL.Metodos.MMedicamento();
             mPaciente = new DAL.Metodos.MPaciente();
             mReceta = new DAL.Metodos.MReceta();

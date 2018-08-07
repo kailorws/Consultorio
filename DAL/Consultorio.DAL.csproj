@@ -61,8 +61,6 @@
       <DependentUpon>BD.settings</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\ICita.cs" />
-    <Compile Include="Interfaces\IDatosMedicos.cs" />
-    <Compile Include="Interfaces\IDireccion.cs" />
     <Compile Include="Interfaces\IHorario.cs" />
     <Compile Include="Interfaces\IMedicamento.cs" />
     <Compile Include="Interfaces\IPaciente.cs" />
@@ -71,8 +69,6 @@
     <Compile Include="Interfaces\IUsuario.cs" />
     <Compile Include="Interfaces\IRecetaMedica.cs" />
     <Compile Include="Metodos\MCita.cs" />
-    <Compile Include="Metodos\MDatosMedicos.cs" />
-    <Compile Include="Metodos\MDireccion.cs" />
     <Compile Include="Metodos\MHorario.cs" />
     <Compile Include="Metodos\MBase.cs" />
     <Compile Include="Metodos\MMedicamento.cs" />

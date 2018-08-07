@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cita.cs" />
-    <Compile Include="DatosMedicos.cs" />
+    <Compile Include="Datos_Medicos.cs" />
     <Compile Include="Direccion.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="Medicamento.cs" />

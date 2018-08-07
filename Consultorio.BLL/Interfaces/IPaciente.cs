@@ -13,11 +13,14 @@ namespace Consultorio.BLL.Interfaces
 
         Paciente BuscarPaciente(int id);
 
-        void InsertarPaciente(Paciente paciente);
+        Datos_Medicos buscarDatosMedicosPaciente(int cedulaPaciente);
 
-        void ActualizarPaciente(Paciente paciente);
+        Direccion buscarContactoPaciente(int cedulaPaciente);
+
+        void InsertarPaciente(Paciente paciente, Datos_Medicos datosMedicos, Direccion datosContacto);
+
+        void ActualizarPaciente(Paciente paciente, Datos_Medicos datosMedicos, Direccion datosContacto);
 
         void EliminarPaciente(int id);
-
     }
 }

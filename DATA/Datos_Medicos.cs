@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DATA
 {
-    public class DatosMedicos
+    public class Datos_Medicos
     {
-        public int Id_DM { get; set; }
+       
 
         public int Cedula { get; set; }
 
@@ -19,5 +19,4 @@ namespace DATA
         public string Tipo_Alergia { get; set; }
 
     }
-
 }
