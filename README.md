@@ -9,9 +9,9 @@ Guia de Prerequisitos, descarga y instalación: https://visualstudio.microsoft.c
 SQL Server 2014 (Hasta la más reciente)
 Guia de Prerequisitos, descarga y instalación: http://elpaladintecnologico.blogspot.com/2014/07/tutorial-de-instalacion-de-sql-server.html
 
+Adicionalmente se necesita que clone este repositorio en su repositorio local
 
 # Instalación
-- Clonar el repositorio de la rama master de GitHub
 
 Base de datos
 - Abrir SQL Server
