@@ -31,6 +31,13 @@ Programa
 - Modificar el archivo BD.settings encontrado en DAL y adaptarlo a la conexion de base de datos local
 - Ejecutar la solucion desde UI
 
+# Despliegue
+
+En un ambiente de desarrollo se plantea montar la pagina web en un servidor (Por ejemplo: AWS).
+Y en el caso de la base de datos estaria tambien alojada en la nube y se cambiaria en connection string del 
+programa con el fin que este pueda utilizar la base de datos remota.
+
+
 
 # Integrantes
 Kailor Murillo Prado  
