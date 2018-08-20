@@ -1,14 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarPaciente.aspx.cs" Inherits="Consultorio.AgregarPaciente" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+
+    <% if (Session["Id"] != null)
+        {%>
+
     <h1>Agregar Paciente</h1>
-    <div>
-        <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" CssClass="btn btn-default" runat="server" Text="Guardar" />
-       
-        <div style="float:right">
-            <asp:Button ID="btnRegresar" OnClick="btnRegresar_Click" CssClass="btn btn-default" runat="server" Text="Regresar" />
-        </div>
-    </div>
 
     <hr />
     <div class="panel panel-default">
@@ -16,7 +14,7 @@
             <h3 class="panel-title">Datos Personales</h3>
         </div>
         <div class="panel-body">
-             <div class="form-group form-inline">
+            <div class="form-group form-inline">
                 <asp:Label ID="lblCedula" runat="server" Text="Cedula: "></asp:Label>
                 <asp:TextBox ID="txtCedula" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
@@ -117,7 +115,20 @@
                 <asp:TextBox ID="txtTipoAlergia" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
         </div>
+
     </div>
 
+    <hr />
 
+    <div>
+
+         <asp:Button ID="btnRegresar" OnClick="btnRegresar_Click" CssClass="btn btn-default" runat="server" Text="Regresar" />
+
+        <div style="float: right">
+            <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" CssClass="btn btn-default" runat="server" Text="Guardar" />
+        </div>
+    </div>
+
+    <%  }
+        else { Response.Redirect("Login.aspx"); } %>
 </asp:Content>

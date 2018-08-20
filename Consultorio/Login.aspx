@@ -77,7 +77,7 @@
 
                         <asp:TextBox ID="txtUsuario" CssClass="txt1 txtstyle" placeholder="Usuario" runat="server"></asp:TextBox>
                         <asp:TextBox ID="txtContrasena" CssClass="txt2 txtstyle" placeholder="Contraseña" TextMode="Password" runat="server"></asp:TextBox>
-                        <asp:Label ID="lbMensajeError"  runat="server" Text="Credenciales incorrectos"></asp:Label>
+                        <asp:Label ID="lbMensajeError"  runat="server"></asp:Label>
                         <asp:Button ID="btnIngresar" CssClass="btn1 btnstyle" runat="server" Text="Iniciar sesión" OnClick="btnIngresar_Click"/>
 
                     </div>

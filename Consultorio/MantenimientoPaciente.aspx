@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Pacientes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MantenimientoPaciente.aspx.cs" Inherits="Consultorio.MantenimientoPaciente" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <% if(Session["Id"] != null) {%>
+
     <h1>Mantenimiento de pacientes</h1>
     <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" CssClass="btn btn-default" runat="server" Text="Agregar" />
     <hr />
@@ -39,4 +42,8 @@
                 </asp:SqlDataSource>
             </div>
         </div>
+
+    
+    <%  }else{ Response.Redirect("Login.aspx"); } %>
+
 </asp:Content>

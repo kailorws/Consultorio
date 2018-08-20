@@ -2,17 +2,10 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-
-
+    <% if (Session["Id"] != null)
+        {%>
 
     <h1>Control Paciente</h1>
-    <div>
-        <asp:Button ID="btnEliminarPaciente" OnClick="btnEliminarPaciente_Click" CssClass="btn btn-default" runat="server" Text="Eliminar" />
-        <asp:Button ID="btnActualizar" OnClick="btnActualizar_Click" CssClass="btn btn-default" runat="server" Text="Actualizar" />
-        <div style="float:right">
-            <asp:Button ID="btnRegresar" OnClick="btnRegresar_Click" CssClass="btn btn-default" runat="server" Text="Regresar" />
-        </div>
-    </div>
 
     <hr />
     <div class="panel panel-default">
@@ -119,5 +112,17 @@
         </div>
     </div>
 
+    <div>
 
+        <asp:Button ID="btnRegresar" OnClick="btnRegresar_Click" CssClass="btn btn-default" runat="server" Text="Regresar" />
+
+        <div style="float: right">
+            <asp:Button ID="btnEliminarPaciente" OnClick="btnEliminarPaciente_Click" CssClass="btn btn-default" runat="server" Text="Eliminar" />
+            <asp:Button ID="btnActualizar" OnClick="btnActualizar_Click" CssClass="btn btn-default" runat="server" Text="Actualizar" />
+        </div>
+
+    </div>
+
+    <%  }
+        else { Response.Redirect("Login.aspx"); } %>
 </asp:Content>
