@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Inicio" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="Consultorio.Principal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <% if(Session["Id"] != null) {%>
+
     <div class="container theme-showcase">
 <div id="holder" class="row" ></div>
 </div>
@@ -426,5 +428,7 @@ $('#holder').calendar({
   data: data
 });
 </script>
+
+    <%  }else{ Response.Redirect("Login.aspx"); } %>
 
 </asp:Content>

@@ -10,7 +10,7 @@
 namespace Consultorio {
     
     
-    public partial class MantenimientoPaciente {
+    public partial class MantenimientoMedicamento {
         
         /// <summary>
         /// Control btnAgregar.
@@ -22,21 +22,21 @@ namespace Consultorio {
         protected global::System.Web.UI.WebControls.Button btnAgregar;
         
         /// <summary>
-        /// Control dgvPacientes.
+        /// Control dgvMedicamentos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvPacientes;
+        protected global::System.Web.UI.WebControls.GridView dgvMedicamentos;
         
         /// <summary>
-        /// Control Pacientes.
+        /// Control Medic.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Pacientes;
+        protected global::System.Web.UI.WebControls.SqlDataSource Medic;
     }
 }

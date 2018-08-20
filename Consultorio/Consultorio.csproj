@@ -133,6 +133,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarMedicamento.aspx" />
     <Content Include="AgregarPaciente.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -140,7 +141,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="DetallesMedicamento.aspx" />
     <Content Include="DetallesPaciente.aspx" />
+    <Content Include="DetallesUsuario.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -157,7 +160,9 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="MantenimientoMedicamento.aspx" />
     <Content Include="MantenimientoPaciente.aspx" />
+    <Content Include="ModificarUsuario.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Resources\Imagenes\background.jpg" />
     <Content Include="Resources\Imagenes\background2.jpg" />
@@ -200,6 +205,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarMedicamento.aspx.cs">
+      <DependentUpon>AgregarMedicamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarMedicamento.aspx.designer.cs">
+      <DependentUpon>AgregarMedicamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarPaciente.aspx.cs">
       <DependentUpon>AgregarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,12 +221,26 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DetallesMedicamento.aspx.cs">
+      <DependentUpon>DetallesMedicamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallesMedicamento.aspx.designer.cs">
+      <DependentUpon>DetallesMedicamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DetallesPaciente.aspx.cs">
       <DependentUpon>DetallesPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DetallesPaciente.aspx.designer.cs">
       <DependentUpon>DetallesPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesUsuario.aspx.cs">
+      <DependentUpon>DetallesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallesUsuario.aspx.designer.cs">
+      <DependentUpon>DetallesUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,12 +252,26 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MantenimientoMedicamento.aspx.cs">
+      <DependentUpon>MantenimientoMedicamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoMedicamento.aspx.designer.cs">
+      <DependentUpon>MantenimientoMedicamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MantenimientoPaciente.aspx.cs">
       <DependentUpon>MantenimientoPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MantenimientoPaciente.aspx.designer.cs">
       <DependentUpon>MantenimientoPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuario.aspx.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
