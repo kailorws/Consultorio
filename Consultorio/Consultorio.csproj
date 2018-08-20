@@ -133,6 +133,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarCita.aspx" />
     <Content Include="AgregarMedicamento.aspx" />
     <Content Include="AgregarPaciente.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -160,6 +161,7 @@
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="MantenimientoCita.aspx" />
     <Content Include="MantenimientoMedicamento.aspx" />
     <Content Include="MantenimientoPaciente.aspx" />
     <Content Include="ModificarUsuario.aspx" />
@@ -205,6 +207,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarCita.aspx.cs">
+      <DependentUpon>AgregarCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarCita.aspx.designer.cs">
+      <DependentUpon>AgregarCita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AgregarMedicamento.aspx.cs">
       <DependentUpon>AgregarMedicamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -251,6 +260,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCita.aspx.cs">
+      <DependentUpon>MantenimientoCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCita.aspx.designer.cs">
+      <DependentUpon>MantenimientoCita.aspx</DependentUpon>
     </Compile>
     <Compile Include="MantenimientoMedicamento.aspx.cs">
       <DependentUpon>MantenimientoMedicamento.aspx</DependentUpon>

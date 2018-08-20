@@ -12,7 +12,7 @@ namespace DAL {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class BD : global::System.Configuration.ApplicationSettingsBase {
         
         private static BD defaultInstance = ((BD)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new BD())));
@@ -26,8 +26,8 @@ namespace DAL {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MARIANO\\SQLEXPRESS;Initial Catalog=Consultorio;Integrated Sec" +
-            "urity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8MA0BKK\\KAILOR_PC;Initial Catalog=Consultorio;Integrated Secu" +
+            "rity=True")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));
