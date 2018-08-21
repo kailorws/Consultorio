@@ -51,7 +51,7 @@
             <br />
 
             <div style="float: right">
-                <asp:Button ID="btnContraseña" OnClick="btnActualizarContra_Click" CssClass="btn btn-default" runat="server" Text="Cambiar mi contraseña" />
+                <asp:Button ID="btnContraseña" OnClick="btnActualizarContra_Click" CssClass="btn btn-primary" runat="server" Text="Cambiar mi contraseña" />
             </div>
 
         </div>

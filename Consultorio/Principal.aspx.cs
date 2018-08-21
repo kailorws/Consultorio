@@ -32,7 +32,7 @@ namespace Consultorio
                 TimeSpan time = TimeSpan.MinValue;
                 pacientes.ForEach(p => { if (p.IdPaciente == c.IdPaciente) nombre = p.Nombre; });
                 horarios.ForEach(p => { if (p.IdHorario == c.IdHorario) time = p.Hora; });
-                calendarios.Add(new Calendario(time, c.Fecha, nombre, c.Descripcion));
+                calendarios.Add(new Calendario(time, c.Fecha, nombre, c.Descripcion,c.IdCita));
             });
             VariableServidor = JsonConvert.SerializeObject(calendarios);
         }

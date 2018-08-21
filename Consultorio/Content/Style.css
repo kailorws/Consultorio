@@ -3,9 +3,9 @@
     padding: 0;
     width: 100vw;
     height: 100vh;
-    font-family: 'Leckerli One','Algerian';
+    font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif';
+    ;
 }
-
 .cover{
     background-color:#ffffff;
     background-repeat:no-repeat;
@@ -60,13 +60,13 @@ header {
     height:7vh;
     vertical-align:top;
 }
-#lbIngresar{
-    display:block;
-    padding-top:7vh;
-    font-size:3vw;
-    font-size:5vh;
-    font-family:'Leckerli One','Algerian';
-    text-shadow:black 0px 20px 20px;
+#lbIngresar {
+    display: block;
+    padding-top: 7vh;
+    font-size: 3vw;
+    font-size: 5vh;
+    font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif';
+    text-shadow: black 0px 20px 20px;
 }
 #lbTitulo {
     font-size: 3vw;
@@ -88,9 +88,9 @@ header {
 }
 
     .txt1[placeholder], .txt2[placeholder] {
-        font-family: 'Leckerli One','Algerian';
-        font-size: 2vw;
-        padding-left: 6vw;
+        font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif';
+        font-size: 1vw;
+        text-align: center;
     }
 .txtstyle{
     width:20vw;
@@ -104,7 +104,7 @@ header {
     margin-top: 7vh;
     width: 17vw;
     height: 7vh;
-    font-family: 'Leckerli One','Algerian';
+    font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif';
     font-size: 2vw;
     border: 0px;
     color: black;

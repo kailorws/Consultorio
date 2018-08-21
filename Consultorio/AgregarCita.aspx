@@ -47,7 +47,7 @@
          <asp:Button ID="btnRegresar" OnClick="btnRegresar_Click" CssClass="btn btn-default" runat="server" Text="Regresar" />
 
         <div style="float: right">
-            <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" CssClass="btn btn-default" runat="server" Text="Guardar" />
+            <asp:Button ID="btnGuardar" OnClick="btnGuardar_Click" CssClass="btn btn-success" runat="server" Text="Guardar" />
         </div>
     </div>
 

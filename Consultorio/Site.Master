@@ -15,8 +15,8 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />    
     <link href="Content/Style.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.3.1.min.js"></script>
@@ -44,7 +44,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-default sidebar" role="navigation">
+        <nav id="late" class="navbar navbar-left sidebar" style="z-index:10000;position: fixed; margin-left:-160px" role="navigation" onmouseover="Mostrar()" onmouseout="Ocultar()">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
@@ -54,30 +54,31 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                <div class="collapse navbar-collapse "  id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Principal">Inicio<span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
                         <li class="dropdown">
-                            <a href="MantenimentoPaciente" class="dropdown-toggle" data-toggle="dropdown">Usuarios<span class="caret"></span><span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                            <a href="MantenimentoPaciente" class="dropdown-toggle" data-toggle="dropdown">Usuarios<span class="caret"></span><span style="font-size: 16px;" class="pull-right  hidden-xs showopacity glyphicon glyphicon-user"></span></a>
                             <ul class="dropdown-menu forAnimate" role="menu">
-                                <li><a href="MantenimientoPaciente">Ver listado de pacientes</a></li>
-                                <li><a href="AgregarPaciente">Añadir un nuevo paciente</a></li>          
+                                <li><a href="MantenimientoPaciente">Ver pacientes</a></li>
+                                <li><a href="AgregarPaciente">Añadir paciente</a></li>          
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="MantenimentoMedicamento" class="dropdown-toggle" data-toggle="dropdown">Medicamentos<span class="caret"></span><span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                            <a href="MantenimentoMedicamento" class="dropdown-toggle" data-toggle="dropdown">Medicamentos<span class="caret"></span><span style="font-size: 16px;" class="pull-right  hidden-xs showopacity glyphicon glyphicon-user"></span></a>
                             <ul class="dropdown-menu forAnimate" role="menu">
-                                <li><a href="MantenimientoMedicamento">Ver listado de medicamentos</a></li>
-                                <li><a href="AgregarMedicamento">Añadir un nuevo medicamento</a></li>          
+                                <li><a href="MantenimientoMedicamento">Ver medicamentos</a></li>
+                                <li><a href="AgregarMedicamento">Añadir medicamento</a></li>          
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="MantenimentoCita" class="dropdown-toggle" data-toggle="dropdown">Citas<span class="caret"></span><span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
+                            <a href="MantenimentoCita" class="dropdown-toggle" data-toggle="dropdown">Citas<span class="caret"></span><span style="font-size: 16px;" class="pull-right  hidden-xs showopacity glyphicon glyphicon-user"></span></a>
                             <ul class="dropdown-menu forAnimate" role="menu">
-                                <li><a href="AgregarCita">Añadir una nueva cita</a></li>          
+                                <li><a href="AgregarCita">Añadir cita</a></li>  
+                                <li><a href="MantenimientoCita">Gestionar citas</a></li> 
                             </ul>
                         </li>
-                        <li><a href="DetallesUsuario">Mi Perfil<span style="font-size: 16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
+                        <li><a href="DetallesUsuario">Mi Perfil<span style="font-size: 16px;" class="pull-right  hidden-xs showopacity glyphicon glyphicon-th-list"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -85,13 +86,21 @@
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
+            </asp:ContentPlaceHolder> 
+        <hr />
+        <footer class="footer" style="position:absolute; bottom:0;">
                 <p>&copy; <%: DateTime.Now.Year %> - Consultorio Dra. Xinia Jiménez</p>
-            </footer>
+        </footer>
         </div>
 
+        <script>
+            function Mostrar() {
+                document.getElementById("late").style.marginLeft = "0px";
+            }
+            function Ocultar() {
+                document.getElementById("late").style.marginLeft = "-160px";
+            }
+        </script>
     </form>
 </body>
 </html>

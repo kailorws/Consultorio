@@ -37,7 +37,7 @@
         <asp:Button ID="btnRegresar" OnClick="btnRegresar_Click" CssClass="btn btn-default" runat="server" Text="Regresar a la pagina principal" />
 
         <div style="float: right">
-            <asp:Button ID="btnActualizar" OnClick="btnActualizar_Click" CssClass="btn btn-default" runat="server" Text="Cambiar datos de mi cuenta" />
+            <asp:Button ID="btnActualizar" OnClick="btnActualizar_Click" CssClass="btn btn-warning" runat="server" Text="Cambiar datos de mi cuenta" />
         </div>
 
     </div>

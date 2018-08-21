@@ -5,7 +5,7 @@
     <% if(Session["Id"] != null) {%>
 
     <h1>Mantenimiento de pacientes</h1>
-    <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" CssClass="btn btn-default" runat="server" Text="Agregar" />
+    <asp:Button ID="btnAgregar" OnClick="btnAgregar_Click" CssClass="btn btn-success" runat="server" Text="Agregar" />
     <hr />
     
 
