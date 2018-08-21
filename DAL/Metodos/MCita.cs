@@ -48,6 +48,6 @@ namespace DAL.Metodos
             List<Cita> lista = _db.Select<Cita>();
             _db.Close();
             return lista;
-        }
+        }       
     }
 }

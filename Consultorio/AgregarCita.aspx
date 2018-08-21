@@ -5,7 +5,14 @@
         {%>
 
      <h1>Agregar Cita</h1>
-
+    <div class="alert alert-success" visible="false" id="mensaje" runat="server">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong id="textoMensaje" runat="server"></strong>
+    </div>
+    <div class="alert alert-danger" visible="false" id="mensajeError" runat="server">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong id="textoMensajeError" runat="server"></strong>
+    </div>
     <hr />
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -23,8 +30,8 @@
             </div>
 
             <div class="form-group form-inline">
-                <asp:Label ID="lbDescripcion" runat="server" Text="Descripción:"></asp:Label>
-                <asp:TextBox ID="txtDescripción" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:Label ID="lbDescripcion" runat="server" Text="Descripción:"></asp:Label>                
+                <asp:TextBox ID="txtDescripción" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>
             </div>
 
             <div class="form-group form-inline">

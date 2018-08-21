@@ -33,6 +33,10 @@
     <Reference Include="ServiceStack.Common">
       <HintPath>..\ServiceStack\ServiceStack.Common.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ServiceStack\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Text">
       <HintPath>..\ServiceStack\ServiceStack.Text.dll</HintPath>
     </Reference>
