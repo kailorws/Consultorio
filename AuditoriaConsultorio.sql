@@ -296,3 +296,437 @@ INSERT INTO AuditPaciente(IdPaciente,NombreCompleto,Sexo,FechaNacimiento,LugarNa
 end
 go
 
+
+
+
+/*-------------------------------- Auditoria de Citas ----------------------------------------------*/
+
+
+CREATE TABLE AuditCita (AuditCita int NOT NULL IDENTITY, IdCita INT, Horario TIME(0), Usuario VARCHAR(100), 
+Paciente VARCHAR(100), Descripcion VARCHAR(300), Fecha date, FechaOperacion DATE, Operacion varchar(20));
+
+
+
+CREATE TRIGGER AUDITCITA_I on CITA
+AFTER INSERT
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdCita int,
+@Horario TIME(0),
+@Usuario VARCHAR(100),
+@Paciente VARCHAR(100),
+@Descripcion VARCHAR(300),
+@Fecha date
+
+Select @IdCita = INSERTED.IdCita from inserted;
+Select @Horario = (Select Hora from Horario where IdHorario = INSERTED.IdHorario) from inserted;
+Select @Usuario = (Select NombreCompleto from Usuario where IdUsuario = inserted.IdUsuario) from INSERTED;
+Select @Paciente = (Select Nombre + ' '+  Apellido1 + ' ' +  Apellido2 from Paciente where IdPaciente = inserted.IdPaciente) from INSERTED;
+Select @Descripcion = INSERTED.Descripcion from INSERTED;
+Select @Fecha = INSERTED.Fecha from INSERTED;
+
+INSERT INTO AuditCita(IdCita,Horario,Usuario,Paciente,Descripcion,Fecha,FechaOperacion,Operacion) values
+ (@IdCita,@Horario,@Usuario,@Paciente,@Descripcion,@Fecha, GETDATE(), 'Insertado') 
+end
+go
+
+
+CREATE TRIGGER AUDITCITA_U on CITA 
+AFTER UPDATE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdCita int,
+@Horario TIME(0),
+@Usuario VARCHAR(100),
+@Paciente VARCHAR(100),
+@Descripcion VARCHAR(300),
+@Fecha date
+
+Select @IdCita = INSERTED.IdCita from inserted;
+Select @Horario = (Select Hora from Horario where IdHorario = INSERTED.IdHorario) from inserted;
+Select @Usuario = (Select NombreCompleto from Usuario where IdUsuario = inserted.IdUsuario) from INSERTED;
+Select @Paciente = (Select Nombre + ' '+  Apellido1 + ' ' +  Apellido2 from Paciente where IdPaciente = inserted.IdPaciente) from INSERTED;
+Select @Descripcion = INSERTED.Descripcion from INSERTED;
+Select @Fecha = INSERTED.Fecha from INSERTED;
+
+INSERT INTO AuditCita (IdCita,Horario,Usuario,Paciente,Descripcion,Fecha,FechaOperacion,Operacion) values
+ (@IdCita,@Horario,@Usuario,@Paciente,@Descripcion,@Fecha, GETDATE(), 'Actualizado') 
+end
+go
+
+
+
+
+CREATE TRIGGER AUDITCITA_D on CITA 
+AFTER DELETE
+AS 
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdCita int,
+@Horario TIME(0),
+@Usuario VARCHAR(100),
+@Paciente VARCHAR(100),
+@Descripcion VARCHAR(300),
+@Fecha date
+
+Select @IdCita = deleted.IdCita from deleted;
+Select @Horario = (Select Hora from Horario where IdHorario = deleted.IdHorario) from deleted;
+Select @Usuario = (Select NombreCompleto from Usuario where IdUsuario = deleted.IdUsuario) from deleted;
+Select @Paciente = (Select Nombre + ' '+  Apellido1 + ' ' +  Apellido2 from Paciente where IdPaciente = deleted.IdPaciente) from deleted;
+Select @Descripcion = deleted.Descripcion from deleted;
+Select @Fecha = deleted.Fecha from deleted;
+
+INSERT INTO AuditCita (IdCita,Horario,Usuario,Paciente,Descripcion,Fecha,FechaOperacion,Operacion) values
+ (@IdCita,@Horario,@Usuario,@Paciente,@Descripcion,@Fecha, GETDATE(), 'Eliminado') 
+end
+go
+
+
+
+
+/*-------------------------------- Auditoria de Datos Medicos ----------------------------------------------*/
+
+
+CREATE TABLE AuditDm (AuditDm int NOT NULL IDENTITY, Id_DM int, Cedula int, Tipo_Sangre VARCHAR(9), 
+Alergia bit, Tipo_Alergia VARCHAR(100), FechaOperacion DATE, Operacion varchar(20));
+
+
+CREATE TRIGGER AUDITDM_I on Datos_Medicos
+AFTER INSERT
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdDm int,
+@Cedula int,
+@TS VARCHAR(9),
+@Alergia bit,
+@TA VARCHAR(100)
+
+Select @IdDm = INSERTED.Id_DM from inserted;
+Select @Cedula = inserted.Cedula from inserted;
+Select @TS = inserted.Tipo_Sangre from INSERTED;
+Select @TA = inserted.Tipo_Alergia from INSERTED;
+Select @Alergia = INSERTED.Alergia from INSERTED;
+
+INSERT INTO AuditDm(Id_DM,Cedula,Tipo_Sangre,Alergia,Tipo_Alergia,FechaOperacion,Operacion) values
+ (@IdDm,@Cedula,@TS,@Alergia,@TA, GETDATE(), 'Insertado') 
+end
+go
+
+
+CREATE TRIGGER AUDITDM_U on Datos_Medicos
+AFTER UPDATE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdDm int,
+@Cedula int,
+@TS VARCHAR(9),
+@Alergia bit,
+@TA VARCHAR(100)
+
+Select @IdDm = INSERTED.Id_DM from inserted;
+Select @Cedula = inserted.Cedula from inserted;
+Select @TS = inserted.Tipo_Sangre from INSERTED;
+Select @TA = inserted.Tipo_Alergia from INSERTED;
+Select @Alergia = INSERTED.Alergia from INSERTED;
+
+INSERT INTO AuditDm(Id_DM,Cedula,Tipo_Sangre,Alergia,Tipo_Alergia,FechaOperacion,Operacion) values
+ (@IdDm,@Cedula,@TS,@Alergia,@TA, GETDATE(), 'Actualizado') 
+end
+go
+
+
+CREATE TRIGGER AUDITDM_D on Datos_Medicos
+AFTER DELETE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdDm int,
+@Cedula int,
+@TS VARCHAR(9),
+@Alergia bit,
+@TA VARCHAR(100)
+
+Select @IdDm = deleted.Id_DM from deleted;
+Select @Cedula = deleted.Cedula from deleted;
+Select @TS = deleted.Tipo_Sangre from deleted;
+Select @TA = deleted.Tipo_Alergia from deleted;
+Select @Alergia = deleted.Alergia from deleted;
+
+INSERT INTO AuditDm(Id_DM,Cedula,Tipo_Sangre,Alergia,Tipo_Alergia,FechaOperacion,Operacion) values
+ (@IdDm,@Cedula,@TS,@Alergia,@TA, GETDATE(), 'Eliminado') 
+end
+go
+
+
+
+/*-------------------------------- Auditoria de Direcciones de contacto ----------------------------------------------*/
+
+
+CREATE TABLE AuditDireccion (AuditDireccion int NOT NULL IDENTITY, IdDireccion INT, Ciudad VARCHAR(50), Provincia VARCHAR(50),
+ DireccionExacta VARCHAR(120), Telefono VARCHAR(10), Correo VARCHAR(50), Cedula int, FechaOperacion DATE, Operacion varchar(20));
+
+
+CREATE TRIGGER AUDITDIREC_I on Direccion
+AFTER INSERT
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdD int,
+@Cedula int,
+@Ciudad VARCHAR(50),
+@Provincia VARCHAR(50),
+@DE VARCHAR(120),
+@Tel VARCHAR(10),
+@Correo VARCHAR(50)
+
+Select @IdD = INSERTED.IdDireccion from inserted;
+Select @Cedula = inserted.Cedula from inserted;
+Select @Ciudad = inserted.Ciudad from INSERTED;
+Select @Provincia = inserted.Provincia from INSERTED;
+Select @DE = INSERTED.DireccionExacta from INSERTED;
+Select @Tel = inserted.Telefono from Inserted;
+Select @Correo = inserted.Correo from inserted;
+
+INSERT INTO AuditDireccion(IdDireccion,Cedula,Ciudad,Provincia,DireccionExacta,Telefono,Correo,FechaOperacion,Operacion) values
+ (@IdD,@Cedula,@Ciudad,@Provincia,@DE,@Tel,@Correo, GETDATE(), 'Insertado') 
+end
+go
+
+
+CREATE TRIGGER AUDITDIREC_U on Direccion
+AFTER UPDATE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdD int,
+@Cedula int,
+@Ciudad VARCHAR(50),
+@Provincia VARCHAR(50),
+@DE VARCHAR(120),
+@Tel VARCHAR(10),
+@Correo VARCHAR(50)
+
+Select @IdD = INSERTED.IdDireccion from inserted;
+Select @Cedula = inserted.Cedula from inserted;
+Select @Ciudad = inserted.Ciudad from INSERTED;
+Select @Provincia = inserted.Provincia from INSERTED;
+Select @DE = INSERTED.DireccionExacta from INSERTED;
+Select @Tel = inserted.Telefono from Inserted;
+Select @Correo = inserted.Correo from inserted;
+
+INSERT INTO AuditDireccion(IdDireccion,Cedula,Ciudad,Provincia,DireccionExacta,Telefono,Correo,FechaOperacion,Operacion) values
+ (@IdD,@Cedula,@Ciudad,@Provincia,@DE,@Tel,@Correo, GETDATE(), 'Actualizado') 
+end
+go
+
+
+
+CREATE TRIGGER AUDITDIREC_D on Direccion
+AFTER DELETE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdD int,
+@Cedula int,
+@Ciudad VARCHAR(50),
+@Provincia VARCHAR(50),
+@DE VARCHAR(120),
+@Tel VARCHAR(10),
+@Correo VARCHAR(50)
+
+Select @IdD = deleted.IdDireccion from deleted;
+Select @Cedula = deleted.Cedula from deleted;
+Select @Ciudad = deleted.Ciudad from deleted;
+Select @Provincia = deleted.Provincia from deleted;
+Select @DE = deleted.DireccionExacta from deleted;
+Select @Tel = deleted.Telefono from deleted;
+Select @Correo = deleted.Correo from deleted;
+
+INSERT INTO AuditDireccion(IdDireccion,Cedula,Ciudad,Provincia,DireccionExacta,Telefono,Correo,FechaOperacion,Operacion) values
+ (@IdD,@Cedula,@Ciudad,@Provincia,@DE,@Tel,@Correo, GETDATE(), 'Eliminado') 
+end
+go
+
+
+
+
+
+/*-------------------------------- Auditoria de Recetas ----------------------------------------------*/
+
+
+CREATE TABLE AuditReceta (AuditReceta int NOT NULL IDENTITY, IdReceta INT, Descripcion VARCHAR(200), FechaDespacho DATE,
+ Nombre VARCHAR(100), Actual bit DEFAULT 1, FechaOperacion DATE, Operacion varchar(20));
+
+
+CREATE TRIGGER AUDITRECETA_I on Receta
+AFTER INSERT
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdR int,
+@Desc varchar(200),
+@FD DATE,
+@NOMBRE VARCHAR(100),
+@ACTUAL BIT
+
+Select @IdR = INSERTED.IdReceta from inserted;
+Select @Desc = inserted.Descripcion from inserted;
+Select @FD = inserted.FechaDespacho from INSERTED;
+Select @NOMBRE = (Select Nombre + ' '+  Apellido1 + ' ' +  Apellido2 from Paciente where IdPaciente = inserted.IdPaciente) from INSERTED;
+Select @ACTUAL = inserted.actual from inserted;
+
+INSERT INTO AuditReceta(IdReceta,Descripcion,FechaDespacho,Nombre,Actual,FechaOperacion,Operacion) values
+ (@IdR,@Desc,@FD,@NOMBRE,@ACTUAL, GETDATE(), 'Insertado') 
+end
+go
+
+
+
+CREATE TRIGGER AUDITRECETA_U on Receta
+AFTER UPDATE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdR int,
+@Desc varchar(200),
+@FD DATE,
+@NOMBRE VARCHAR(100),
+@ACTUAL BIT
+
+Select @IdR = INSERTED.IdReceta from inserted;
+Select @Desc = inserted.Descripcion from inserted;
+Select @FD = inserted.FechaDespacho from INSERTED;
+Select @NOMBRE = (Select Nombre + ' '+  Apellido1 + ' ' +  Apellido2 from Paciente where IdPaciente = inserted.IdPaciente) from INSERTED;
+Select @ACTUAL = inserted.actual from inserted;
+
+INSERT INTO AuditReceta(IdReceta,Descripcion,FechaDespacho,Nombre,Actual,FechaOperacion,Operacion) values
+ (@IdR,@Desc,@FD,@NOMBRE,@ACTUAL, GETDATE(), 'Actualizado') 
+end
+go
+
+
+CREATE TRIGGER AUDITRECETA_D on Receta
+AFTER DELETE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdR int,
+@Desc varchar(200),
+@FD DATE,
+@NOMBRE VARCHAR(100),
+@ACTUAL BIT
+
+Select @IdR = DELETED.IdReceta from DELETED;
+Select @Desc = DELETED.Descripcion from DELETED;
+Select @FD = DELETED.FechaDespacho from DELETED;
+Select @NOMBRE = (Select Nombre + ' '+  Apellido1 + ' ' +  Apellido2 from Paciente where IdPaciente = DELETED.IdPaciente) from DELETED;
+Select @ACTUAL = DELETED.actual from DELETED;
+
+INSERT INTO AuditReceta(IdReceta,Descripcion,FechaDespacho,Nombre,Actual,FechaOperacion,Operacion) values
+ (@IdR,@Desc,@FD,@NOMBRE,@ACTUAL, GETDATE(), 'Eliminado') 
+end
+go
+
+
+/*-------------------------------- Auditoria de Recetas Medicas ----------------------------------------------*/
+
+
+CREATE TABLE AuditRM (AuditRM int NOT NULL IDENTITY, IdReceta INT, Medicamento VARCHAR(150), Dosis VARCHAR(150), FechaOperacion DATE, Operacion varchar(20));
+
+
+CREATE TRIGGER AUDITRM_I on RecetaMedica
+AFTER INSERT
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdR int,
+@Med varchar(150),
+@Dosis VARCHAR(150)
+
+Select @IdR = INSERTED.IdReceta from inserted;
+Select @Med = (SELECT NombreGenerico FROM Medicamento where IdMedicamento = inserted.IdMedicamento) from inserted;
+Select @Dosis = inserted.Dosis from inserted;
+
+INSERT INTO AuditRM(IdReceta,Medicamento,Dosis,FechaOperacion,Operacion) values
+ (@IdR, @Med, @Dosis, GETDATE(), 'Insertado') 
+end
+go
+
+
+
+CREATE TRIGGER AUDITRM_U on RecetaMedica
+AFTER UPDATE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdR int,
+@Med varchar(150),
+@Dosis VARCHAR(150)
+
+Select @IdR = INSERTED.IdReceta from inserted;
+Select @Med = (SELECT NombreGenerico FROM Medicamento where IdMedicamento = inserted.IdMedicamento) from inserted;
+Select @Dosis = inserted.Dosis from inserted;
+
+INSERT INTO AuditRM(IdReceta,Medicamento,Dosis,FechaOperacion,Operacion) values
+ (@IdR, @Med, @Dosis, GETDATE(), 'Actualizado') 
+end
+go
+
+
+CREATE TRIGGER AUDITRM_D on RecetaMedica
+AFTER DELETE
+AS
+BEGIN
+SET NOCOUNT ON;
+DECLARE
+
+@IdR int,
+@Med varchar(150),
+@Dosis VARCHAR(150)
+
+Select @IdR = DELETED.IdReceta from DELETED;
+Select @Med = (SELECT NombreGenerico FROM Medicamento where IdMedicamento = DELETED.IdMedicamento) from DELETED;
+Select @Dosis = DELETED.Dosis from DELETED;
+
+INSERT INTO AuditRM(IdReceta,Medicamento,Dosis,FechaOperacion,Operacion) values
+ (@IdR, @Med, @Dosis, GETDATE(), 'Eliminado') 
+end
+go
+
+
+
+
+
+
